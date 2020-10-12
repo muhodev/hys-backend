@@ -1,0 +1,9 @@
+{
+  "name": "hys-backend",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/muhodev/hys-backend.git",
+  "author": "muhodev <hi@muho.dev>",
+  "license": "MIT",
+  "private": true
+}
