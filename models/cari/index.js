@@ -1,8 +1,11 @@
 const mongoose = require("mongoose")
 
+const validator = require("validator")
+
 const CariSchema = new mongoose.Schema({
     isim: {
-        type: "String"
+        type: "String",
+        validate: [validator.isAlpha, " "]
     },
     soyisim: {
         type: "String"
@@ -37,9 +40,16 @@ const CariSchema = new mongoose.Schema({
     ],
     tür: {
         type: "String",
+        required: true,
+        enum: {
+            values: ["şahıs", "şirket"]
+        }
     },
     cariTürü: {
         type: "String",
+        enum: {
+            values: ["borçlu", "müvekkil", "vekil", "personel", "üçüncü şahıs", "çözüm ortağı", "kefil"]
+        }
     },
     iletisim: [
         {
